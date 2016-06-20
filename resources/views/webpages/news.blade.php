@@ -58,7 +58,66 @@
                 <!-- Blog post area -->
                 <div class="col-lg-8 col-md-8 col-sm-12">
                 	
-                    <!-- Blog post 1 -->
+                    <!--
+
+                            
+                        @foreach($last as $post)
+                            <div class="row post-items">
+                                <a href="{{$post->getUrl()}}">
+                                <div class="media col-md-3 no-padding">
+                                    <figure class="pull-left ">
+                                        <img class="media-object img-rounded img-responsive"  src="uploads/{{$post['image']}}" alt="{{$post['title']}} " >
+                                    </figure>
+                                </div>
+                                <div class="col-md-9">
+                                    <h3 class="list-group-item-heading">{{$post['title']}}</h3>
+                                    <p class="list-group-item-text"> {{substr(strip_tags($post['content']), 0, 150)}}... </p>
+                                    <small>{{$post['author']}}</small>
+                                </div>
+                                </a>
+                            </div>
+                        @endforeach
+                    
+
+                     -->
+                    
+                    
+                    @foreach($last as $post)
+                    <article class="pm-column-spacing news-post">
+                    
+                    <p class="pm-standalone-news-post-category"><a href="#"><span>general information</span></a></p>
+                    <div class="pm-standalone-news-post" style="background-image:url(uploads/{{$post['image']}});">
+                        
+                        <div class="pm-standalone-news-post-overlay">
+                                
+                                <div class="pm-standalone-news-post-icon">
+                                    <img src="uploads/{{$mostRecommended['image']}}" width="33" height="41" alt="icon">
+                                </div>
+                        
+                                  <h3 class="pm-standalone-news-post-title"><center>{{$post['title']}}</center></h3>
+                              
+                                  <p class="pm-standalone-news-post-date">{{$post['created_at']->toFormattedDateString()}} by {{$post['author']}}</p>
+                                
+                            </div>
+                        
+                        </div>
+                            
+
+                        <div class="pm-standalone-news-post-excerpt">
+                            <p>  {{substr(strip_tags($post['content']), 0, 150)}}...  <a href="#">[...]</a> </p>
+                            
+                            <a href="{{URL:: asset('news-post')}}" class="pm-rounded-btn no-border pm-center-align">view post  <i class="fa fa-plus"></i></a>
+                       </div>
+                        
+                    </article>
+                                    
+
+                        @endforeach
+
+
+<!--
+removed
+                    <!-- *******************************Blog post 1********************************************** 
                     <article class="pm-column-spacing news-post">
                     
                     	<p class="pm-standalone-news-post-category"><a href="#"><span>general information</span></a></p>
@@ -74,13 +133,13 @@
                                 <h6 class="pm-standalone-news-post-title"><a href="{{$mostRecommended->getUrl()}}">asking the right questions when meeting your family doctor</a></h6>
                                 
                                 <p class="pm-standalone-news-post-date">January 21, 2015 by Dr. John Stanton</p>
-                               <!-- <a href="{{URL:: asset('news-post')}}" class="pm-standalone-news-post-comment-count">8 Comments</a> -->
                                 
+                               <!-- <a href="{{URL:: asset('news-post')}}" class="pm-standalone-news-post-comment-count">8 Comments</a> 
                             </div>
                         
                         </div>
                                                 
-                        
+
                         <div class="pm-standalone-news-post-excerpt">
                         	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id bibendum massa, vulputate consectetur dui. Ut ut eros congue, condimentum massa <a href="#">[...]</a> </p>
                             
@@ -89,9 +148,9 @@
                         </div>
                         
                     </article>
-                    <!-- Blog post 1 end -->
+                    <!-- Blog post 1 end 
                     
-                    <!-- Blog post 2 -->
+                    <!-- Blog post 2 
                     <article class="pm-column-spacing news-post">
                     
                     	<p class="pm-standalone-news-post-category"><a href="#"><span>physician</span></a></p>
@@ -107,7 +166,7 @@
                                 <h6 class="pm-standalone-news-post-title"><a href="{{URL:: asset('news-post')}}">The difficulty of coordinating primary care</a></h6>
                                 
                                 <p class="pm-standalone-news-post-date">January 15, 2015 by Dr. Jane Williams</p>
-                               <!-- <a href="{{URL:: asset('news-post')}}" class="pm-standalone-news-post-comment-count">12 Comments</a> -->
+                               <!-- <a href="{{URL:: asset('news-post')}}" class="pm-standalone-news-post-comment-count">12 Comments</a> 
                                 
                             </div>
                         
@@ -123,7 +182,7 @@
                     </article>
                     <!-- Blog post 2 end -->
                     
-                    <!-- Blog post 3 -->
+                    <!-- Blog post 3 
                     <article class="pm-column-spacing news-post">
                     
                     	<p class="pm-standalone-news-post-category"><a href="#"><span>education</span></a></p>
@@ -139,7 +198,7 @@
                                 <h6 class="pm-standalone-news-post-title"><a href="{{URL:: asset('news-post')}}">what i learned from the next generation of doctors</a></h6>
                                 
                                 <p class="pm-standalone-news-post-date">January 8, 2015 by Dr. John Stanton</p>
-                             <!--   <a href="{{URL:: asset('news-post')}}" class="pm-standalone-news-post-comment-count">17 Comments</a>  -->
+                             <!--   <a href="{{URL:: asset('news-post')}}" class="pm-standalone-news-post-comment-count">17 Comments</a>  
                                 
                             </div>
                         
@@ -155,7 +214,7 @@
                     </article>
                     <!-- Blog post 3 end -->
                     
-                    <!-- Blog post 4 -->
+                    <!-- Blog post 4 
                     <article class="pm-column-spacing news-post">
                     
                     	<p class="pm-standalone-news-post-category"><a href="#"><span>health</span></a></p>
@@ -171,7 +230,7 @@
                                 <h6 class="pm-standalone-news-post-title"><a href="{{URL:: asset('news-post')}}">High fitness levels reduce hypertension risk</a></h6>
                                 
                                 <p class="pm-standalone-news-post-date">January 6, 2015 by Dr. John Stanton</p>
-                          <!--      <a href="{{URL:: asset('news-post')}}" class="pm-standalone-news-post-comment-count">5 Comments</a> -->
+                          <!--      <a href="{{URL:: asset('news-post')}}" class="pm-standalone-news-post-comment-count">5 Comments</a> 
                                 
                             </div>
                         
@@ -187,7 +246,7 @@
                     </article>
                     <!-- Blog post 4 end -->
                     
-                    <!-- Blog post 5 -->
+                    <!-- Blog post 5 
                     <article class="pm-column-spacing news-post">
                     
                     	<p class="pm-standalone-news-post-category"><a href="#"><span>health</span></a></p>
@@ -203,7 +262,7 @@
                                 <h6 class="pm-standalone-news-post-title"><a href="news-post.html">Severe stroke patients recover better with prompt stent action</a></h6>
                                 
                                 <p class="pm-standalone-news-post-date">January 3, 2015 by Dr. John Stanton</p>
-                            <!--    <a href="news-post.html#comments" class="pm-standalone-news-post-comment-count">28 Comments</a> -->
+                            <!--    <a href="news-post.html#comments" class="pm-standalone-news-post-comment-count">28 Comments</a> 
                                 
                             </div>
                         
@@ -219,12 +278,12 @@
                     </article>
                     <!-- Blog post 5 end -->
                                         
-                    
-                    <!-- Load more -->                    
+         
+                    <!-- Load more                  
                     <ul class="pm-post-loaded-info news">
                     	<!-- <li>
                         	<p>Viewing <strong>5</strong> of <strong>42</strong> posts</p>
-                        </li>-->
+                        </li>
 
                          <li>
                         	<a href="#">Load more &nbsp; <i class="fa fa-cloud-download"></i></a>
@@ -232,8 +291,8 @@
                     </ul>
                     <!-- Load more end -->
                     
-                </div>
-                <!-- Blog post area end -->
+                </div> -->
+                <!-- **************************************Blog post area end****************************************** -->
                 
                 <!-- Sidebar area -->
                 <aside>
