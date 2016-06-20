@@ -79,7 +79,8 @@
                             </div>
                         
                         </div>
-                    	                        
+                                                
+                        
                         <div class="pm-standalone-news-post-excerpt">
                         	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id bibendum massa, vulputate consectetur dui. Ut ut eros congue, condimentum massa <a href="#">[...]</a> </p>
                             
