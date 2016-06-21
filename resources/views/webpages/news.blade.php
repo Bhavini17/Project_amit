@@ -85,13 +85,15 @@
                     @foreach($last as $post)
                     <article class="pm-column-spacing news-post">
                     
-                    <p class="pm-standalone-news-post-category"><a href="#"><span>general information</span></a></p>
-                    <div class="pm-standalone-news-post" style="background-image:url(uploads/{{$post['image']}});">
+                    <p class="pm-standalone-news-post-category"><a><span>POST</span></a></p>
+                    
+                     <div class="pm-standalone-news-post">
+                    <img src="uploads/{{$post['image']}}" width="800" height="400" alt="icon"> 
                         
                         <div class="pm-standalone-news-post-overlay">
                                 
                                 <div class="pm-standalone-news-post-icon">
-                                    <img src="uploads/{{$mostRecommended['image']}}" width="33" height="41" alt="icon">
+                                     <img src="uploads/{{$post['image']}}" width="33" height="41" alt="icon">
                                 </div>
                         
                                   <h3 class="pm-standalone-news-post-title"><center>{{$post['title']}}</center></h3>
@@ -104,7 +106,7 @@
                             
 
                         <div class="pm-standalone-news-post-excerpt">
-                            <p>  {{substr(strip_tags($post['content']), 0, 150)}}...  <a href="#">[...]</a> </p>
+                            <p>  {{substr(strip_tags($post['content']), 0, 150)}}...   </p>
                             
                             <a href="{{URL:: asset('news-post')}}" class="pm-rounded-btn no-border pm-center-align">view post  <i class="fa fa-plus"></i></a>
                        </div>
@@ -272,9 +274,7 @@ removed
                         	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id bibendum massa, vulputate consectetur dui. Ut ut eros congue, condimentum massa <a href="#">[...]</a> </p>
                             
                             <a href="news-post.html" class="pm-rounded-btn no-border pm-center-align">view post  <i class="fa fa-plus"></i></a>
-                            
                         </div>
-                        
                     </article>
                     <!-- Blog post 5 end -->
                                         
@@ -291,7 +291,7 @@ removed
                     </ul>
                     <!-- Load more end -->
                     
-                </div> -->
+                </div> 
                 <!-- **************************************Blog post area end****************************************** -->
                 
                 <!-- Sidebar area -->
