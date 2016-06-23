@@ -11,12 +11,11 @@
                 	<div class="row">
                     	<div class="col-lg-12">
                         	
-                            <p class="pm-post-title">asking the right questions when meeting your family doctor</p>
+                            <p class="pm-post-title"> {{$post['title']}} </p>
                             
                         </div>
                     </div>
                 </div>
-                
             </div>
             
             <div class="pm-sub-header-breadcrumbs single-post">
@@ -34,16 +33,15 @@
                             </ul>
                             
                             <ul class="pm-post-navigation">
+           
                             	<li class="pm_tip_static_top" title="Prev. Post"><a href="#" class="fa fa-angle-left"></a></li>
                                 <li class="pm_tip_static_top" title="Next Post"><a href="#" class="fa fa-angle-right"></a></li>
-                            </ul>
-                            
+
+                            </ul>      
                         </div>
                     </div>
                 </div>
-                
             </div>
-        
         </div>
         
  		<!-- Sub-header area end -->
@@ -57,19 +55,21 @@
             	<div class="col-lg-12">
                 	
                     <!-- Post image -->
-                    <div class="pm-single-news-post" style="background-image:url(img/news/news-post1.jpg);">
-                        
+                    <div class="pm-single-news-post">
+                        <img src="{{url('uploads/'.$post['image'])}}" width="800" height="400" alt="icon" align="center">  </div>
+                         <!-- one way of giving image source as in index page of serverfireteam-->
+
                         <div class="pm-single-news-post-overlay">
                             
                             <div class="pm-single-news-post-icon">
-                                <img src="img/news/post-icon.jpg" width="33" height="41" alt="icon">
+                                <img src="/uploads/{{$post['image']}}" width="33" height="41" alt="icon"> 
+                                <!-- another way of giving the source of image -->
                             </div>
                             
-                            <h6 class="pm-single-news-post-title"><a href="news-post.html">asking the right questions when meeting your family doctor</a></h6>
+                            <h6 class="pm-single-news-post-title"><a href="news-post.html">{{$post['title']}}</a></h6>
                             
-                            <p class="pm-single-news-post-date">January 21, 2015 by Dr. John Stanton</p>
-                            
-                            <a href="news-post.html#comments" class="pm-standalone-news-post-comment-count">8 Comments</a>
+                          <p class="pm-single-news-post-date">{{$post['created_at']->toFormattedDateString()}}  by {{$post['author']}}</p>  
+                         <!-- <a href="news-post.html#comments" class="pm-standalone-news-post-comment-count">8 Comments</a> -->
                             
                         </div>
                     
@@ -130,7 +130,9 @@
         <!-- PANEL 1 end -->
         
         <!-- PANEL 2 -->
-        <div class="pm-column-container pm-containerPadding-bottom-50 pm-parallax-panel" style="background-color:#21BBC7; background-image:url(img/news-post/author-bg.jpg);" data-stellar-vertical-offset="-100" data-stellar-background-ratio="0.5">
+        <div class="pm-column-container pm-containerPadding-bottom-50 pm-parallax-panel" style="background-color:#21BBC7; background-image:url({{url('/img/author-bg.jpg')}});" data-stellar-vertical-offset="-100" data-stellar-background-ratio="0.5">
+
+        <!-- {{url('uploads/'.$post['image'])}} -->
         
         	<div class="container pm-containerPadding80">
             	<div class="row">
@@ -142,9 +144,9 @@
                         	
                             <div class="col-lg-3 col-md-3 col-sm-12">
                             	
-                                <div class="pm-author-bio-img-bg" style="background-image:url(img/news-post/avatar.jpg);">
+                                <div class="pm-author-bio-img-bg" style="background-image:url({{url('img/news-post/avatar.jpg')}});">
                                 	<div class="pm-single-news-post-avatar-icon">
-                                        <img width="33" height="41" src="img/news/post-icon.jpg" class="img-responsive" alt="icon">
+                                        <img width="33" height="41" src="/img/news/post-icon.jpg" class="img-responsive" alt="icon">
                                     </div>
                                 </div>
                                 
@@ -179,7 +181,7 @@
                     	<ul class="pm-related-blog-posts">
                             <!-- Post -->
                             <li>
-                                <div class="pm-related-blog-post-thumb" style="background-image:url(img/sidebar/post1.jpg);"></div>
+                                <div class="pm-related-blog-post-thumb" style="background-image:url({{url('img/sidebar/post1.jpg')}});"></div>
                                 <div class="pm-related-blog-post-details">
                                     <a href="news-post.html">Lorem ipsum dolor sit amet consectetur adipiscing elit.</a>
                                     <p class="pm-date">Jan 29, 2015 by Dr. Jane Williams</p>
@@ -215,7 +217,7 @@
         </div>
         <!-- PANEL 3 end-->
         
-        <!-- PANEL 4 -->
+        <!-- PANEL 4
         <a id="comments"></a>
         <div class="pm-column-container pm-containerPadding80" style="background-color:#21BBC7;">
         
@@ -225,10 +227,10 @@
                     	
                         <h4 class="pm-comments-response-title">1 response to "asking the right questions when meeting your family doctor"</h4>
                         
-                        <!-- Comments --> 
+                        <!-- Comments
                         <div class="pm-comments-container">
                             
-                            <!-- Comment -->
+                            <!-- Comment
                             <div class="pm-comment-box-container">
                                                         
                                 <div class="pm-comment-box-avatar-container">
@@ -251,10 +253,10 @@
                                 </div>
                                 
                             </div>
-                            <!-- Comment end -->
+                            <!-- Comment end 
                         
                         </div>
-                        <!-- Comments end --> 
+                        <!-- Comments end 
                         
                     </div>
                 </div>

@@ -44,10 +44,10 @@ Route::get('/general-ques','Controller@generalques');
 //Route::get('/medical-staff','Controller@medicalstaff');
 
 
-Route::get('/news-post','Controller@newspost');
+//Route::get('/news-post/{$id}','Controller@newspost');
 
 
-Route::get('/news','Controller@news');
+//Route::get('/news','Controller@news');
 
 
 Route::get('/prod-post','Controller@prodpost');
@@ -70,4 +70,8 @@ if (\Request::is('panel/Blog/*'))
     \Config::set('panel.controllers', 'Serverfireteam\blog\panel');
 }
 
-Route::controller('/news', 'BlogController');
+Route::get('/news', 'BlogController@getIndex');
+
+
+Route::get('/news-post/{id}', 'BlogController@getPost');
+

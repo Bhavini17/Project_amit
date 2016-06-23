@@ -11,7 +11,7 @@ class blog extends Model
     
     // return url of blog post 
     function getUrl(){
-        return \Config::get('app.url') .'/blog/news'. $this->id . '/' . Http\Controllers\BlogController::seoUrl($this->title);
+        return \Config::get('app.url') .'/news-post'. '/' . $this->id ;//. Http\Controllers\BlogController::seoUrl($this->title);
     }
     
     public static  function mostRecommended(){

@@ -41,11 +41,15 @@ class BlogController extends BaseController
 	 */
 	public function getPost($id)
 	{
+
+            
+            $imgPath = url('/');
+
             $post = \App\blog::find($id);
             if($post == NULL){
                 App::abort(404);
             }
-            return View('webpages.news-post',array('title'=>$post['title'],'post'=>$post));
+            return View('webpages.news-post',['title'=>$post['title'], 'post'=>$post, 'imgPath'=>$imgPath]);
 	}
         
     /**

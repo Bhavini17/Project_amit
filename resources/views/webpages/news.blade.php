@@ -108,7 +108,7 @@
                         <div class="pm-standalone-news-post-excerpt">
                             <p>  {{substr(strip_tags($post['content']), 0, 150)}}...   </p>
                             
-                            <a href="{{URL:: asset('news-post')}}" class="pm-rounded-btn no-border pm-center-align">view post  <i class="fa fa-plus"></i></a>
+                            <a href="{{$post->getUrl()}}" class="pm-rounded-btn no-border pm-center-align">view post  <i class="fa fa-plus"></i></a>
                        </div>
                         
                     </article>
