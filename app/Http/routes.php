@@ -75,3 +75,5 @@ Route::get('/news', 'BlogController@getIndex');
 
 Route::get('/news-post/{id}', 'BlogController@getPost');
 
+Route::get('/contact', 'ContactController@showForm');
+	Route::post('/contact', 'ContactController@sendContactInfo');

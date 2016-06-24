@@ -103,30 +103,31 @@
             
             <div class="row">
                 
-                	<form action="#" method="post">
+                	<form action="\contact" method="post">
+                    <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                     	
                         <div class="col-lg-6 col-md-6 col-sm-12">
-                            <input name="pm-first-name-field" class="pm-form-textfield" type="text" placeholder="First Name">
+                            <input name="fname" class="pm-form-textfield" type="text" placeholder="First Name">
                         </div>
                         
                         <div class="col-lg-6 col-md-6 col-sm-12">
-                            <input name="pm-last-name-field" class="pm-form-textfield" type="text" placeholder="Last Name">
+                            <input name="lname" class="pm-form-textfield" type="text" placeholder="Last Name">
                         </div>
                         
                         <div class="col-lg-6 col-md-6 col-sm-12">
-                            <input name="pm-email-field" class="pm-form-textfield" type="text" placeholder="Email Address">
+                            <input name="email" class="pm-form-textfield" type="text" placeholder="Email Address">
                         </div>
                         
                         <div class="col-lg-6 col-md-6 col-sm-12">
-                            <input name="pm-phone-field" class="pm-form-textfield" type="text" placeholder="Phone Number">
+                            <input name="phone" class="pm-form-textfield" type="text" placeholder="Phone Number">
                         </div>
                         
                         <div class="col-lg-12">
-                            <textarea name="pm-textarea-field" class="pm-form-textarea" cols="50" rows="10" placeholder="Message"></textarea>
+                            <textarea name="message" class="pm-form-textarea" cols="50" rows="10" placeholder="Message"></textarea>
                         </div>
                         
                         <div class="col-lg-12 pm-center">
-                            <input type="button" value="Submit Form &plus;" name="pm-form-submit-btn" class="pm-form-submit-btn">
+                            <input type="Submit" value="Submit Form &plus;" name="pm-form-submit-btn" class="pm-form-submit-btn">
                             <p class="pm-required">all fields are required</p>
                         </div>
                     
