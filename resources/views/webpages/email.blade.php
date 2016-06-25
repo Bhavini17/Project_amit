@@ -1,17 +1,19 @@
+<html>
+
+<body>
 Contact Details :
+<br>
+
+First Name {{$data['fname']}}, <br>
+Last Name {{$data['lname']}}, <br>
+Email {{$data['email']}}, <br>
+Phone Number {{$data['phone']}},<br>
 
 
-First Name {{$data['fname']}},
-Last Name {{$data['lname']}},
-Email {{$data['email']}},
-Phone Number {{$data['phone']}},
-boom
-<?php
-print_r($data);
-?>
-
- $content1
 
  @foreach( $data['messageLines'] as $content)
-			{{!!  $content	 !!}}	
+			  <br> {{ $content }} 
  @endforeach
+
+ </body>
+ </html>
