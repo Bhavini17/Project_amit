@@ -28,8 +28,8 @@
 
     <script type="text/javascript">
    <!--
-      // Form validation code for appointment.
-      function validate1()
+      // Form validation code will come here.
+      function validate()
       {
       
          if( document.myForm.name.value == "" )
@@ -70,54 +70,6 @@
          return( true );
       }
    //-->
-
-
-    //validation code for contact-us page
- function validate2()
-      {
-      
-         if( document.contact.fname.value == "" )
-         {
-            alert( "Please provide your first name!" );
-            document.myForm.name.focus() ;
-            return false;
-         }
-
-        if( document.contact.lname.value == "" )
-         {
-            alert( "Please provide your last name!" );
-            document.myForm.name.focus() ;
-            return false;
-         }
-
-        if( document.contact.email.value == "" )
-         {
-            alert( "Please provide your email id!" );
-            document.contact.name.focus() ;
-            return false;
-         }
-
-        if( document.contact.phone.value == "" )
-         {
-            alert( "Please provide your phone number!" );
-            document.contact.name.focus() ;
-            return false;
-         }
-
-         if( document.contact.message.value == "" )
-         {
-            alert( "Please provide a message!" );
-            document.contact.name.focus() ;
-            return false;
-         }
-
-      return( true );
-      }
-   //-->
-
-
-</script>
-
       </script>
 
     
@@ -298,7 +250,7 @@
            <div class="container">
                 <div class="row">
                     
-                    <form action="getAppointment" method="post" name="myForm" onsubmit="return(validate1())">
+                    <form action="getAppointment" method="post" name="myForm" onsubmit="return(validate())">
                         <div class="col-lg-4 col-md-4 col-sm-6">
                             <input type="text" name="name" id="name" class="pm-request-appointment-form-textfield" placeholder="Full Name">
                         </div>
@@ -455,10 +407,43 @@
                     </nav>
                     </div>
 
+
+
+
+
+********************
+
+
+
+ <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                    @if (Auth::guest())
+                        <li><a href="{{ url('/login') }}">Login</a></li>
+                        <li><a href="{{ url('/register') }}">Register</a></li>
+                    @else
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            </ul>
+                        </li>
+                    @endif
+                </ul>
+            </div>
+
+
+
+*******************
+
+
+
+
                     <div class="col-lg-2 col-md-2 col-sm-12 pm-main-menu nav navbar-nav navbar-right">
                                         
                         <ul class="sf-menu pm-nav">
-
                           @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
@@ -474,23 +459,8 @@
                         </li>
                     @endif
                 </ul>
-
-
-
-
-
-
-
-
-                         <!--  <li><a href="{{URL:: asset('/login')}}"
-                           @if(ends_with(Route::currentRouteAction(), 'passwords.login')) 
-                                        class="active"
-                                    @endif
-                            >Login</a></li>  
-                            <li><a href="{{URL:: asset('/panel/login')}}">Admin</a></li>
-                        </ul>
                         
-                    </div>   -->
+                    </div>
 
 
                       <!--

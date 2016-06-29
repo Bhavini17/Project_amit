@@ -103,7 +103,8 @@
             
             <div class="row">
                 
-                	<form action="\contact" method="post">
+                	<form onsubmit="return(validate2())" action="\contact" method="post" name="contact">
+
                     <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                     	
                         <div class="col-lg-6 col-md-6 col-sm-12">
